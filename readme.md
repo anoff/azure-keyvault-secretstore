@@ -1,7 +1,6 @@
 # azure-keyvault-secretstore
 
 [![Build Status](https://travis-ci.org/anoff/azure-keyvault-secretstore.svg?branch=master)](https://travis-ci.org/anoff/azure-keyvault-secretstore)
-
 [![Coverage Status](https://coveralls.io/repos/github/anoff/azure-keyvault-secretstore/badge.svg?branch=master)](https://coveralls.io/github/anoff/azure-keyvault-secretstore?branch=master)
 
 > Storing secrets in KeyVault 🔐 and using them in Azure Function ⚡️ without writing boilerplate each time
