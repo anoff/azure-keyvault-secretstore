@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "ava",
+    "test": "standard && nyc ava",
     "test:coverage": "nyc ava",
     "lint": "standard"
   },
