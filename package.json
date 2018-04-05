@@ -6,6 +6,9 @@
   "directories": {
     "lib": "lib"
   },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "test": "standard && nyc ava",
     "test:coverage": "nyc ava",
