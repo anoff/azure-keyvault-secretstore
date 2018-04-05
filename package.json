@@ -26,7 +26,14 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
+    "coveralls": "^3.0.0",
     "nyc": "^11.6.0",
     "standard": "^11.0.1"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
