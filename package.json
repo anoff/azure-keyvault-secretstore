@@ -1,0 +1,30 @@
+{
+  "name": "azure-keyvault-secretstore",
+  "version": "0.1.0",
+  "description": "Easily use Azure KeyVault to store secrets for Function Apps (or WebApps)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "ava",
+    "lint": "standard"
+  },
+  "keywords": [
+    "azure",
+    "keyvault",
+    "functions",
+    "secrets"
+  ],
+  "author": "Andreas Offenhaeuser <https://anoff.io>",
+  "license": "MIT",
+  "dependencies": {
+    "azure-keyvault": "^3.0.4-preview",
+    "ms-rest-azure": "^2.5.5",
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "standard": "^11.0.1"
+  }
+}
