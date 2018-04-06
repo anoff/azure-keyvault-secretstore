@@ -11,6 +11,8 @@
 - [Usage](#usage)
 - [API](#api)
   - [SecretStore](#secretstore)
+    - [SecretStore.secrets](#secretstoresecrets)
+    - [SecretStore.isUpdating](#secretstoreisupdating)
     - [new SecretStore(keyVaultUrl, createKeyVaultClientFn)](#new-secretstorekeyvaulturl-createkeyvaultclientfn)
     - [secretStore.add(secretName)](#secretstoreaddsecretname)
     - [secretStore.age()](#secretstoreage)
@@ -41,7 +43,7 @@ Quick example how to use this in a Function App with MSI enabled:
 ```javascript
 const { SecretStore, createKeyVaultClient } = require('azure-keyvault-secretstore')
 
-const secretStore = SecretStore('https://customvault123.vault.azure.net', createKeyVaultClient)
+const secretStore = new SecretStore('https://customvault123.vault.azure.net', createKeyVaultClient)
 secretStore.add('secret-one').add('another-secret').add('same-name-as-in-keyvault')
 secretStore.refresh() // initial refresh
 .then(/* ... bootstrap databases etc using the secrets using secretStore.get('secret-one').value */)
@@ -58,6 +60,18 @@ The module returns an object containing multiple functions. The functions are sp
 All methods are _promise-friendly_
 
 ### SecretStore
+
+#### SecretStore.secrets
+
+Type: `Array`
+
+Exposes the internal array of all secrets.
+
+#### SecretStore.isUpdating
+
+Type: `Boolean`
+
+Is true if there is a `refresh()` in progress.
 
 #### new SecretStore(keyVaultUrl, createKeyVaultClientFn)
 
@@ -92,6 +106,23 @@ Returns the number of seconds since the store has been refreshed.
 #### secretStore.refresh()
 
 Fetch the current values for all secrets added to the store from KeyVault. Returns a Promise resolving to the updated `SecretStore` instance.
+
+This method will `Promise.reject` if any of the added secrets can not be fetched from KeyVault. The resulting error message is a transparent message from the **azure-keyvault** library:
+
+```javascript
+{
+  "statusCode": 404,
+  "request": {...},
+  "response": {...},
+  "code": "SecretNotFound",
+  "body": {
+    "error": {
+      "code": "SecretNotFound",
+      "message": "Secret not found: another-secret"
+    }
+  }
+}
+```
 
 #### secretStore.get(secretName)
 
@@ -158,9 +189,9 @@ The Managed Service Identity endpoint for your function. Usually available via `
 A bootstrapped version of `getKeyVaultClient()` that reads some default environment variables and uses those to create a valid client. This works off the shelf if MSI is activated, otherwise Service Principal credentials have to be exposed to the process.
 
 ```javascript
-process.env['ARM_CLIENT_ID'] // -> options.clientId
-process.env['ARM_CLIENT_SECRET'] // -> options.clientSecret
-process.env['ARM_TENANT_ID'] // -> options.tenantId
+process.env['CLIENT_ID'] // -> options.clientId
+process.env['CLIENT_SECRET'] // -> options.clientSecret
+process.env['TENANT_ID'] // -> options.tenantId
 process.env['MSI_ENDPOINT'] // -> options.msiEndpoint
 ```
 
