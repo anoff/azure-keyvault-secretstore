@@ -25,7 +25,7 @@
   "dependencies": {
     "azure-keyvault": "^3.0.4-preview",
     "ms-rest-azure": "^2.5.5",
-    "npm": "^5.8.0"
+    "npm": "^6.0.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
