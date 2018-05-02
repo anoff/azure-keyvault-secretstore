@@ -1,7 +1,6 @@
 # azure-keyvault-secretstore
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/anoff/azure-keyvault-secretstore.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/anoff/azure-keyvault-secretstore.svg?branch=master)](https://travis-ci.org/anoff/azure-keyvault-secretstore)
 [![Coverage Status](https://coveralls.io/repos/github/anoff/azure-keyvault-secretstore/badge.svg?branch=master)](https://coveralls.io/github/anoff/azure-keyvault-secretstore?branch=master)
 
