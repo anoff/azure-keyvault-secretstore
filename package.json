@@ -1,6 +1,6 @@
 {
   "name": "azure-keyvault-secretstore",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Easily use Azure KeyVault to store secrets for Function Apps (or WebApps)",
   "main": "index.js",
   "directories": {
