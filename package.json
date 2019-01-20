@@ -23,8 +23,8 @@
   "author": "Andreas Offenhaeuser <https://anoff.io>",
   "license": "MIT",
   "dependencies": {
-    "azure-keyvault": "^3.0.4-preview",
-    "ms-rest-azure": "^2.5.5"
+    "azure-keyvault": "^3.0.4",
+    "ms-rest-azure": "^2.6.0"
   },
   "devDependencies": {
     "ava": "^1.0.1",
