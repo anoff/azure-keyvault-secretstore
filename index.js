@@ -8,7 +8,7 @@ const tenantId = process.env['TENANT_ID']
 const msiEndpoint = process.env['MSI_ENDPOINT']
 
 // create a curried client that uses ENV variables
-const keyVaultCurried = () => keyVault.getKeyVaultClient({clientId, clientSecret, tenantId, msiEndpoint})
+const keyVaultCurried = () => keyVault.getKeyVaultClient({ clientId, clientSecret, tenantId, msiEndpoint })
 
 module.exports = {
   SecretStore: secretStore.SecretStore,
