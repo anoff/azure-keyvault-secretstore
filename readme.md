@@ -1,8 +1,11 @@
 # azure-keyvault-secretstore
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/anoff/azure-keyvault-secretstore.svg)](https://greenkeeper.io/)
+[![npm version](https://img.shields.io/npm/v/azure-keyvault-secretstore.svg)](https://www.npmjs.com/package/azure-keyvault-secretstore)
 [![Build Status](https://travis-ci.org/anoff/azure-keyvault-secretstore.svg?branch=master)](https://travis-ci.org/anoff/azure-keyvault-secretstore)
 [![Coverage Status](https://coveralls.io/repos/github/anoff/azure-keyvault-secretstore/badge.svg?branch=master)](https://coveralls.io/github/anoff/azure-keyvault-secretstore?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/anoff/azure-keyvault-secretstore.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/npm/azure-keyvault-secretstore/badge.svg)](https://snyk.io/test/npm/azure-keyvault-secretstore)
+[![Outdated dependencies](https://david-dm.org/anoff/azure-keyvault-secretstore.svg)](https://david-dm.org/anoff/azure-keyvault-secretstore)
 
 > Storing secrets in KeyVault 🔐 and using them in Azure Function ⚡️ without writing boilerplate each time
 
