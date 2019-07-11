@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "azure-keyvault": "^3.0.4",
-    "ms-rest-azure": "^2.6.0"
+    "ms-rest-azure": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^2.0.0",
