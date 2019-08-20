@@ -1,0 +1,23 @@
+trigger: '*'
+pr: 'master'
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    node_8:
+      node_version: '8'
+    node_10:
+      node_version: '10'
+    node_12:
+      node_version: '12'
+    node_latest:
+      node_version: 'latest'
+
+steps:
+- task: NodeTool@0 
+  inputs:
+    versionSpec: $(node_version)
+- bash: npm ci
+- bash: npm test
+- bash: 'cat coverage/lcov.info | ./node_modules/.bin/coveralls'
